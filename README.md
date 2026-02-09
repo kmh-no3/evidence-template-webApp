@@ -5,7 +5,7 @@
 - 配布ファイル: `public/templates` 配下
 - テンプレート一覧: `public/templates/manifest.json`
 - 画面: `/`（ダウンロードボタン）
-- API: `/api/templates`（manifestを返す）
+- テンプレート一覧（JSON）: `/templates/manifest.json`
 
 ## 1. ローカル起動（WSL/Windows どちらでもOK）
 
@@ -16,7 +16,23 @@ npm run dev
 
 ブラウザで `http://localhost:3000` を開きます。
 
-## 2. デプロイ（おすすめ: Vercel）
+## 2. デプロイ（GitHub Pages）
+
+GitHub Actions による自動デプロイが設定済みです。
+
+### セットアップ手順
+
+1. GitHubでリポジトリを作成し、Push
+2. リポジトリの **Settings → Pages** を開く
+3. **Source** を **GitHub Actions** に変更
+4. `master` ブランチへPushすると自動でビルド＆デプロイされます
+
+公開URL: `https://<ユーザー名>.github.io/<リポジトリ名>/`
+
+> **Note:** basePath はワークフロー内でリポジトリ名から自動設定されます（`NEXT_PUBLIC_BASE_PATH`）。
+> ローカル開発時（`npm run dev`）は basePath なし（ルート直下）で動作します。
+
+### Vercel にデプロイする場合
 
 - GitHubへPush
 - VercelでImport
@@ -38,7 +54,7 @@ npm run dev
 ### Phase 0（今 / v0）: 配布のみ
 - 静的テンプレートをWebからダウンロード
 - manifestでバージョン管理
-- GitHub + Vercel で即公開
+- GitHub + GitHub Pages で即公開
 
 ### Phase 1（テンプレ生成）
 - 画面フォームに入力すると、**テンプレを自動生成**

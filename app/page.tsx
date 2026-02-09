@@ -24,6 +24,8 @@ async function loadManifest(): Promise<Manifest> {
   return JSON.parse(raw) as Manifest;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default async function Page() {
   const manifest = await loadManifest();
 
@@ -42,7 +44,7 @@ export default async function Page() {
         <p style={{ marginTop: 10, lineHeight: 1.7, opacity: 0.9 }}>
           SAP導入プロジェクトを含む各種案件で再利用できる、テスト項目表／証跡一覧テンプレートを配布するための最小Webアプリ（v0）。
           <br />
-          テンプレートは <code style={{ padding: "2px 6px", background: "rgba(255,255,255,0.08)", borderRadius: 6 }}>/public/templates</code> に配置されています。
+          テンプレートは <code style={{ padding: "2px 6px", background: "rgba(255,255,255,0.08)", borderRadius: 6 }}>public/templates</code> に配置されています。
         </p>
       </header>
 
@@ -73,12 +75,13 @@ export default async function Page() {
                     <div style={{ marginTop: 8, display: "flex", gap: 10, flexWrap: "wrap", opacity: 0.75, fontSize: 12 }}>
                       <span>更新日: {t.updated_at}</span>
                       <span>SHA-256: <code style={{ padding: "1px 6px", background: "rgba(255,255,255,0.08)", borderRadius: 6 }}>{t.sha256.slice(0, 16)}…</code></span>
-                      <a href="/api/templates" style={{ color: "#9dd1ff" }}>API</a>
+                      <a href={`${basePath}/templates/manifest.json`} style={{ color: "#9dd1ff" }}>manifest.json</a>
                     </div>
                   </div>
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <a
-                      href={`/templates/${t.file}`}
+                      href={`${basePath}/templates/${t.file}`}
+                      download
                       style={{
                         display: "inline-block",
                         padding: "10px 14px",
@@ -105,7 +108,7 @@ export default async function Page() {
         <ol style={{ marginTop: 0 }}>
           <li><code>public/templates</code> に新しいテンプレートファイルを配置</li>
           <li><code>public/templates/manifest.json</code> の更新（version/sha256）</li>
-          <li>GitHubへPush → Vercel等へデプロイ</li>
+          <li>GitHubへPush → GitHub Pages へ自動デプロイ</li>
         </ol>
       </section>
     </main>
