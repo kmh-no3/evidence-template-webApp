@@ -25,7 +25,7 @@ GitHub Actions による自動デプロイが設定済みです。
 1. GitHubでリポジトリを作成し、Push
 2. リポジトリの **Settings → Pages** を開く
 3. **Source** を **GitHub Actions** に変更
-4. `master` ブランチへPushすると自動でビルド＆デプロイされます
+4. `main` ブランチへPushすると自動でビルド＆デプロイされます
 
 公開URL: `https://<ユーザー名>.github.io/<リポジトリ名>/`
 
