@@ -1,0 +1,4 @@
+﻿証跡ID,関連テストID,手順No,証跡種別,取得場所（画面/トランザクション等）,説明（何を示すか）,ファイル名,保管先（URL/パス）,取得日時,取得者,マスキング要否,マスキング実施者,版数/リリース,備考
+EVI-001,TC-001,2,Screenshot,伝票作成画面,ZAでの保存後メッセージ,EVI_TC001_ZA_001.png,\\share\evidence\,,,要,,v1.0,例
+EVI-002,TC-002,2,Screenshot,伝票作成画面,ZBでの保存後メッセージ,EVI_TC002_ZB_001.png,\\share\evidence\,,,要,,v1.0,例
+EVI-003,TC-003,2,Screenshot,伝票作成画面,ZCでの保存後メッセージ,EVI_TC003_ZC_001.png,\\share\evidence\,,,要,,v1.0,例

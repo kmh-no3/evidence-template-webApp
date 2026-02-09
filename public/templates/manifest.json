@@ -1,0 +1,61 @@
+{
+  "manifest_version": 1,
+  "templates_version": "2026.02.09",
+  "generated_at": "2026-02-09T13:34:54Z",
+  "templates": [
+    {
+      "id": "generic-xlsx",
+      "name": "汎用：テストエビデンス（Excel 2シート）",
+      "file": "Test_Evidence_Template_JP.xlsx",
+      "format": "xlsx",
+      "description": "汎用のテスト項目表＋証跡一覧（スクリーンショット）テンプレート。SAP以外でも利用可能。",
+      "updated_at": "2026-02-09",
+      "sha256": "979e7f8b76aa948cfca6293dd573b957dceb8bdeeaa0efbbb47d1d94b275f153"
+    },
+    {
+      "id": "sap-xlsx",
+      "name": "SAP：カスタマイズ向け（Excel 2シート）",
+      "file": "Test_Evidence_Template_SAP_Customizing_JP.xlsx",
+      "format": "xlsx",
+      "description": "SAPカスタマイズ向けに、IMGパス/T-code/テーブル/移送などの列を追加したテンプレート。",
+      "updated_at": "2026-02-09",
+      "sha256": "e93d51f1d6d6f1bd39fc2c62a6fc70958e2f09e23d0f05ba0bc3db768d50231a"
+    },
+    {
+      "id": "generic-items-csv",
+      "name": "汎用：テスト項目表（CSV）",
+      "file": "Test_Items_Template_JP.csv",
+      "format": "csv",
+      "description": "汎用のテスト項目表テンプレート（CSV）。",
+      "updated_at": "2026-02-09",
+      "sha256": "134645992d96ac2748190dbd732bee7069928d2dde46f096af19dec776da5de2"
+    },
+    {
+      "id": "generic-evi-csv",
+      "name": "汎用：証跡ログ（CSV）",
+      "file": "Evidence_Log_Template_JP.csv",
+      "format": "csv",
+      "description": "汎用の証跡ログテンプレート（CSV）。",
+      "updated_at": "2026-02-09",
+      "sha256": "c0bdb7e8fe07c114301937ccba3602ef4a72b6b360ff26415895742ea47225fa"
+    },
+    {
+      "id": "sap-items-csv",
+      "name": "SAP：テスト項目表（CSV）",
+      "file": "Test_Items_Template_SAP_Customizing_JP.csv",
+      "format": "csv",
+      "description": "SAPカスタマイズ向けのテスト項目表テンプレート（CSV）。",
+      "updated_at": "2026-02-09",
+      "sha256": "53ff8eef711e0d50633796adf846e73ced3416d2151e0e380ce19b2e6d824ad4"
+    },
+    {
+      "id": "sap-evi-csv",
+      "name": "SAP：証跡ログ（CSV）",
+      "file": "Evidence_Log_Template_SAP_Customizing_JP.csv",
+      "format": "csv",
+      "description": "SAPカスタマイズ向けの証跡ログテンプレート（CSV）。",
+      "updated_at": "2026-02-09",
+      "sha256": "9fae7d4d1c287bda766d31f564f47274506f01b33c88bb32704d44cd2afc31b2"
+    }
+  ]
+}
