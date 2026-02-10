@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-bold transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary/20 border border-primary/35 text-foreground hover:bg-primary/25;
+  }
+  
+  .btn-secondary {
+    @apply bg-card border border-border hover:bg-card-hover;
+  }
+  
+  .card {
+    @apply bg-card border border-border rounded-2xl p-4;
+  }
+  
+  .input-base {
+    @apply bg-background border border-border rounded-lg px-3 py-2 text-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary;
+  }
+  
+  .checkbox-base {
+    @apply w-4 h-4 rounded border-border bg-background;
+    @apply checked:bg-primary checked:border-primary;
+    @apply focus:ring-2 focus:ring-primary/50;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .label-base {
+    @apply text-sm font-medium text-foreground/90;
+  }
+  
+  .tooltip {
+    @apply text-xs bg-gray-900 text-gray-100 px-2 py-1 rounded shadow-lg;
+  }
+}

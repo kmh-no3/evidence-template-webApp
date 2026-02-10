@@ -1,0 +1,536 @@
+{
+  "test_id": {
+    "key": "test_id",
+    "label": "テストID",
+    "sheet": "test_items",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "TC-001 のように一意なID"
+  },
+  "process": {
+    "key": "process",
+    "label": "業務プロセス/シナリオ",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "例: 受注→出荷→請求"
+  },
+  "target": {
+    "key": "target",
+    "label": "対象（機能/設定）",
+    "sheet": "test_items",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "テスト対象の機能や設定項目"
+  },
+  "requirement_id": {
+    "key": "requirement_id",
+    "label": "要件/設計ID",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": false,
+    "help": "関連する要件書や設計書のID"
+  },
+  "change_request_id": {
+    "key": "change_request_id",
+    "label": "変更要求/チケットID",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "変更要求やチケットシステムのID"
+  },
+  "test_type": {
+    "key": "test_type",
+    "label": "テスト種別",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "enum",
+    "default_on": true,
+    "help": "テストの種類を選択",
+    "enum": ["単体テスト", "結合テスト", "システムテスト", "受入テスト", "設定テスト", "回帰テスト"]
+  },
+  "priority": {
+    "key": "priority",
+    "label": "優先度",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "enum",
+    "default_on": true,
+    "help": "テストの優先度",
+    "enum": ["高", "中", "低"]
+  },
+  "precondition": {
+    "key": "precondition",
+    "label": "事前条件",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": false,
+    "help": "テスト実行前に必要な条件"
+  },
+  "input_data": {
+    "key": "input_data",
+    "label": "入力データ/パラメータ",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "テストに使用する入力データやパラメータ"
+  },
+  "steps": {
+    "key": "steps",
+    "label": "手順",
+    "sheet": "test_items",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "テスト実行の手順"
+  },
+  "expected": {
+    "key": "expected",
+    "label": "期待結果",
+    "sheet": "test_items",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "テスト実行時に期待される結果"
+  },
+  "evidence_required": {
+    "key": "evidence_required",
+    "label": "証跡要否",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "enum",
+    "default_on": true,
+    "help": "証跡（スクリーンショット等）の要否",
+    "enum": ["要", "不要"]
+  },
+  "executed_at": {
+    "key": "executed_at",
+    "label": "実行日",
+    "sheet": "test_items",
+    "category": "MUST",
+    "type": "date",
+    "default_on": true,
+    "help": "テスト実行日"
+  },
+  "executor": {
+    "key": "executor",
+    "label": "実行者",
+    "sheet": "test_items",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "テストを実行した担当者"
+  },
+  "result": {
+    "key": "result",
+    "label": "結果",
+    "sheet": "test_items",
+    "category": "MUST",
+    "type": "enum",
+    "default_on": true,
+    "help": "テスト実行結果",
+    "enum": ["未実施", "PASS", "FAIL", "SKIP", "保留"]
+  },
+  "bug_id": {
+    "key": "bug_id",
+    "label": "不具合ID",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "発見された不具合のID"
+  },
+  "evidence_id": {
+    "key": "evidence_id",
+    "label": "証跡ID（複数可）",
+    "sheet": "test_items",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "関連する証跡のID（複数の場合はカンマ区切り）"
+  },
+  "remarks": {
+    "key": "remarks",
+    "label": "備考",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "その他メモや補足事項"
+  },
+  "module": {
+    "key": "module",
+    "label": "モジュール",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "SAP モジュール（FI/CO/SD/MM等）",
+    "sap_hint": {
+      "examples": "FI, CO, SD, MM, PP, QM, PM, HR"
+    }
+  },
+  "system": {
+    "key": "system",
+    "label": "システム（DEV/QAS/PRD）",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "enum",
+    "default_on": true,
+    "help": "テスト実施システム環境",
+    "enum": ["DEV", "QAS", "PRD"],
+    "sap_hint": {
+      "examples": "DEV, QAS, PRD"
+    }
+  },
+  "client": {
+    "key": "client",
+    "label": "クライアント",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "SAPクライアント番号（例: 100, 800）",
+    "sap_hint": {
+      "examples": "100, 800"
+    }
+  },
+  "img_path": {
+    "key": "img_path",
+    "label": "IMGパス（SPRO）/設定項目",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "SPRO内のIMGパス",
+    "sap_hint": {
+      "tcode": "SPRO",
+      "examples": "財務会計 > 総勘定元帳会計 > 伝票 > 伝票タイプ"
+    }
+  },
+  "tcode": {
+    "key": "tcode",
+    "label": "T-code",
+    "sheet": "test_items",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "トランザクションコード（例: OBA7, SM30）",
+    "sap_hint": {
+      "examples": "OBA7, SM30, SE11, SE16N"
+    }
+  },
+  "table_view": {
+    "key": "table_view",
+    "label": "参照テーブル/ビュー",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "関連するSAPテーブルやビュー名",
+    "sap_hint": {
+      "examples": "T003, V_T003, BKPF, BSEG"
+    }
+  },
+  "setting_key": {
+    "key": "setting_key",
+    "label": "設定キー/選択キー",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "設定の識別キー（例: BLART=ZA）",
+    "sap_hint": {
+      "examples": "BLART=ZA, BUKRS=1000"
+    }
+  },
+  "transport_no": {
+    "key": "transport_no",
+    "label": "移送依頼番号",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "トランスポート依頼番号（例: DEVK9A1234）",
+    "sap_hint": {
+      "examples": "DEVK9A1234, DEVK900123"
+    }
+  },
+  "setting_diff": {
+    "key": "setting_diff",
+    "label": "設定差分（Before→After）",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "変更前後の差分",
+    "sap_hint": {
+      "examples": "標準→Z*追加"
+    }
+  },
+  "impact": {
+    "key": "impact",
+    "label": "影響範囲/関連設定",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "変更による影響範囲",
+    "sap_hint": {
+      "examples": "伝票入力/承認/IF"
+    }
+  },
+  "review_point": {
+    "key": "review_point",
+    "label": "レビュー観点",
+    "sheet": "test_items",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "レビュー時の確認観点",
+    "sap_hint": {
+      "examples": "権限/SoD/監査ログ確認"
+    }
+  },
+  "evidence_log_id": {
+    "key": "evidence_log_id",
+    "label": "証跡ID",
+    "sheet": "evidence_log",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "証跡の一意なID（例: EVI-001）"
+  },
+  "related_test_id": {
+    "key": "related_test_id",
+    "label": "関連テストID",
+    "sheet": "evidence_log",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "この証跡が関連するテストID"
+  },
+  "step_no": {
+    "key": "step_no",
+    "label": "手順No",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "number",
+    "default_on": true,
+    "help": "テスト手順の番号"
+  },
+  "evidence_type": {
+    "key": "evidence_type",
+    "label": "証跡種別",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "enum",
+    "default_on": true,
+    "help": "証跡の種類",
+    "enum": ["Screenshot", "Log", "Document", "Video", "Config Export"]
+  },
+  "capture_location": {
+    "key": "capture_location",
+    "label": "取得場所（画面/トランザクション等）",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "証跡を取得した画面やトランザクション"
+  },
+  "evidence_description": {
+    "key": "evidence_description",
+    "label": "説明（何を示すか）",
+    "sheet": "evidence_log",
+    "category": "MUST",
+    "type": "text",
+    "default_on": true,
+    "help": "この証跡が何を示しているか"
+  },
+  "filename": {
+    "key": "filename",
+    "label": "ファイル名",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "証跡ファイルの名前"
+  },
+  "storage_path": {
+    "key": "storage_path",
+    "label": "保管先（URL/パス）",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "url",
+    "default_on": true,
+    "help": "証跡ファイルの保管先（URL、SharePoint、ファイルサーバ等）"
+  },
+  "captured_at": {
+    "key": "captured_at",
+    "label": "取得日時",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "date",
+    "default_on": true,
+    "help": "証跡を取得した日時"
+  },
+  "captured_by": {
+    "key": "captured_by",
+    "label": "取得者",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "証跡を取得した担当者"
+  },
+  "masking_required": {
+    "key": "masking_required",
+    "label": "マスキング要否",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "enum",
+    "default_on": true,
+    "help": "個人情報等のマスキングが必要か",
+    "enum": ["要", "不要"]
+  },
+  "masking_by": {
+    "key": "masking_by",
+    "label": "マスキング実施者",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "マスキングを実施した担当者"
+  },
+  "version": {
+    "key": "version",
+    "label": "版数/リリース",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "対象システムの版数やリリース番号"
+  },
+  "evidence_remarks": {
+    "key": "evidence_remarks",
+    "label": "備考",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "その他メモや補足事項"
+  },
+  "screenshot_area": {
+    "key": "screenshot_area",
+    "label": "スクリーンショット貼付エリア",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "画像を挿入→セル内に収まるようにサイズ調整"
+  },
+  "evidence_system": {
+    "key": "evidence_system",
+    "label": "システム（DEV/QAS/PRD）",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "enum",
+    "default_on": true,
+    "help": "証跡取得時のシステム環境",
+    "enum": ["DEV", "QAS", "PRD"],
+    "sap_hint": {
+      "examples": "DEV, QAS, PRD"
+    }
+  },
+  "evidence_client": {
+    "key": "evidence_client",
+    "label": "クライアント",
+    "sheet": "evidence_log",
+    "category": "RECOMMENDED",
+    "type": "text",
+    "default_on": true,
+    "help": "SAPクライアント番号",
+    "sap_hint": {
+      "examples": "100, 800"
+    }
+  },
+  "evidence_img_path": {
+    "key": "evidence_img_path",
+    "label": "IMGパス（SPRO）/設定項目",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "SPRO内のIMGパス",
+    "sap_hint": {
+      "tcode": "SPRO"
+    }
+  },
+  "evidence_tcode": {
+    "key": "evidence_tcode",
+    "label": "T-code",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "トランザクションコード",
+    "sap_hint": {
+      "examples": "OBA7, SM30"
+    }
+  },
+  "evidence_object": {
+    "key": "evidence_object",
+    "label": "オブジェクト/テーブル/ビュー",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "関連するSAPオブジェクト",
+    "sap_hint": {
+      "examples": "T003, V_T003"
+    }
+  },
+  "evidence_transport_no": {
+    "key": "evidence_transport_no",
+    "label": "移送依頼番号",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "トランスポート依頼番号",
+    "sap_hint": {
+      "examples": "DEVK9A1234"
+    }
+  },
+  "capture_user_role": {
+    "key": "capture_user_role",
+    "label": "取得時ユーザ/ロール",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "証跡取得時のユーザIDやロール",
+    "sap_hint": {
+      "examples": "FI_TEST, Z_FI_USER"
+    }
+  },
+  "masking_target": {
+    "key": "masking_target",
+    "label": "マスキング対象",
+    "sheet": "evidence_log",
+    "category": "OPTIONAL",
+    "type": "text",
+    "default_on": false,
+    "help": "マスキング対象の項目",
+    "sap_hint": {
+      "examples": "会社コード/取引先名/BP名/口座"
+    }
+  }
+}

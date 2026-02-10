@@ -1,0 +1,82 @@
+{
+  "id": "Development_JP",
+  "name": "開発プロジェクト（日本語）",
+  "domain": "Development",
+  "description": "ソフトウェア開発プロジェクト向けのテストテンプレート",
+  "levels": {
+    "lite": {
+      "description": "レビュー用コア列（最小限）",
+      "default_on_keys": [
+        "test_id",
+        "target",
+        "test_type",
+        "expected",
+        "result",
+        "bug_id",
+        "evidence_id",
+        "executed_at",
+        "executor"
+      ]
+    },
+    "full": {
+      "description": "作業者用詳細列（全項目）",
+      "default_on_keys": [
+        "test_id",
+        "process",
+        "target",
+        "requirement_id",
+        "change_request_id",
+        "test_type",
+        "priority",
+        "precondition",
+        "input_data",
+        "steps",
+        "expected",
+        "evidence_required",
+        "executed_at",
+        "executor",
+        "result",
+        "bug_id",
+        "evidence_id",
+        "remarks"
+      ]
+    }
+  },
+  "columns": [
+    "test_id",
+    "process",
+    "target",
+    "requirement_id",
+    "change_request_id",
+    "test_type",
+    "priority",
+    "precondition",
+    "input_data",
+    "steps",
+    "expected",
+    "evidence_required",
+    "executed_at",
+    "executor",
+    "result",
+    "bug_id",
+    "evidence_id",
+    "remarks"
+  ],
+  "evidence_columns": [
+    "evidence_log_id",
+    "related_test_id",
+    "step_no",
+    "evidence_type",
+    "capture_location",
+    "evidence_description",
+    "filename",
+    "storage_path",
+    "captured_at",
+    "captured_by",
+    "masking_required",
+    "masking_by",
+    "version",
+    "evidence_remarks",
+    "screenshot_area"
+  ]
+}

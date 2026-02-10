@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import Link from "next/link";
 
 type Template = {
   id: string;
@@ -36,17 +37,68 @@ export default async function Page() {
 
   return (
     <main>
-      <header style={{ marginBottom: 18 }}>
+      <header style={{ marginBottom: 24 }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap" }}>
           <h1 style={{ margin: 0, fontSize: 28, letterSpacing: 0.2 }}>テストエビデンス テンプレート</h1>
           <span style={{ opacity: 0.8 }}>v{manifest.templates_version}</span>
         </div>
         <p style={{ marginTop: 10, lineHeight: 1.7, opacity: 0.9 }}>
-          SAP導入プロジェクトを含む各種案件で再利用できる、テスト項目表／証跡一覧テンプレートを配布するための最小Webアプリ（v0）。
-          <br />
-          テンプレートは <code style={{ padding: "2px 6px", background: "rgba(255,255,255,0.08)", borderRadius: 6 }}>public/templates</code> に配置されています。
+          SAP導入プロジェクトを含む各種案件で再利用できる、テスト項目表／証跡一覧テンプレート。
         </p>
       </header>
+
+      {/* v1: カスタムテンプレート生成 */}
+      <section style={{
+        background: "linear-gradient(135deg, rgba(157, 209, 255, 0.15) 0%, rgba(157, 209, 255, 0.05) 100%)",
+        border: "1px solid rgba(157, 209, 255, 0.3)",
+        borderRadius: 16,
+        padding: 20,
+        marginBottom: 24
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+          <h2 style={{ margin: 0, fontSize: 20, fontWeight: 700 }}>
+            カスタムテンプレート生成
+          </h2>
+          <span style={{
+            fontSize: 12,
+            padding: "2px 8px",
+            background: "rgba(157, 209, 255, 0.3)",
+            border: "1px solid rgba(157, 209, 255, 0.5)",
+            borderRadius: 6,
+            fontWeight: 700
+          }}>
+            NEW
+          </span>
+        </div>
+        <p style={{ marginTop: 8, lineHeight: 1.7, opacity: 0.9 }}>
+          プロファイルを選択し、必要な列だけをチェックボックスで選んでカスタマイズしたテンプレートを生成・ダウンロードできます。
+        </p>
+        <Link
+          href="/generator"
+          style={{
+            display: "inline-block",
+            marginTop: 12,
+            padding: "10px 20px",
+            borderRadius: 10,
+            background: "rgba(157, 209, 255, 0.2)",
+            border: "1px solid rgba(157, 209, 255, 0.4)",
+            color: "#e6edf3",
+            textDecoration: "none",
+            fontWeight: 700,
+            transition: "all 0.2s"
+          }}
+        >
+          テンプレート生成ページへ →
+        </Link>
+      </section>
+
+      {/* v0: テンプレート直接ダウンロード */}
+      <section style={{ marginBottom: 18 }}>
+        <h2 style={{ fontSize: 18, marginBottom: 12, opacity: 0.95 }}>定型テンプレート（直接ダウンロード）</h2>
+        <p style={{ marginBottom: 14, lineHeight: 1.7, opacity: 0.8, fontSize: 14 }}>
+          あらかじめ作成されたFull版テンプレートをそのままダウンロードできます。
+        </p>
+      </section>
 
       <section style={{ display: "grid", gap: 14 }}>
         {Object.entries(groups).map(([groupName, items]) => (
